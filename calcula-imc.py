@@ -1,8 +1,18 @@
-# Cálculo de IMC
-peso = float(input("Digite seu peso (em kg): "))
-alt = float(input("Digite sua altura (em metros): "))
-
-imc = peso / (alt * alt)
+# Cálculo de IMC com validação e dicas
+while True:
+    try:
+        peso = float(input("Digite seu peso (em kg): "))
+        altura = float(input("Digite sua altura (em metros): "))
+        
+        if peso <= 0 or altura <= 0:
+            print("Valores inválidos! Peso e altura devem ser positivos.\n")
+            continue
+            
+        imc = peso / (altura ** 2)
+        break
+        
+    except ValueError:
+        print("Entrada inválida! Use números (ex: 68.5 ou 1,75).\n")
 
 print("Seu IMC é: ", imc)
 
